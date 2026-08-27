@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="ScienceMarket - A marketplace for astronomy, seismology, archaeology, plate tectonics and general science learning resources."
+    >
+
+    <title>ScienceMarket | Explore. Learn. Sell.</title>
+
+    <link
+        rel="stylesheet"
+        href="/css/styles.css"
+    >
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+        defer
+    ></script>
+
+    <script
+        src="/js/config.js"
+        defer
+    ></script>
+
+    <script
+        src="/js/app.js"
+        defer
+    ></script>
+</head>
+
+<body>
+
+<header class="site-header">
+
+    <div class="container nav-container">
+
+        <a
+            href="#home"
+            class="logo"
+        >
+            <span class="logo-symbol">✦</span>
+            <span>ScienceMarket</span>
+        </a>
+
+        <button
+            id="mobileMenuButton"
+            class="mobile-menu-button"
+            aria-label="Open navigation"
+        >
+            ☰
+        </button>
+
+        <nav id="mainNavigation" class="main-navigation">
+
+            <a href="#home">Home</a>
+
+            <a href="#about">About Us</a>
+
+            <a href="#store">Store Page</a>
+
+            <a href="#contact">Contacts</a>
+
+            <a
+                href="#dashboard"
+                id="dashboardLink"
+                class="hidden"
+            >
+                Seller Dashboard
+            </a>
+
+            <button
+                id="loginButton"
+                class="nav-login-button"
+            >
+                Login
+            </button>
+
+            <button
+                id="logoutButton"
+                class="nav-login-button hidden"
+            >
+                Logout
+            </button>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+<main>
+
+    <!-- HERO / CTA -->
+
+    <section
+        id="home"
+        class="hero-section"
+    >
+
+        <div class="container hero-grid">
+
+            <div class="hero-content">
+
+                <span class="eyebrow">
+                    SCIENCE KNOWLEDGE MARKETPLACE
+                </span>
+
+                <h1>
+                    Discover the science
+                    behind our world.
+                </h1>
+
+                <p>
+                    Buy and sell high-quality educational
+                    resources covering astronomy, seismology,
+                    archaeology, plate tectonics and more.
+                </p>
+
+                <div class="hero-actions">
+
+                    <a
+                        href="#store"
+                        class="primary-button"
+                    >
+                        Explore Store
+                    </a>
+
+                    <button
+                        id="sellNowButton"
+                        class="secondary-button"
+                    >
+                        Start Selling
+                    </button>
+
+                </div>
+
+                <div class="hero-stats">
+
+                    <div>
+                        <strong>5+</strong>
+                        <span>Science Areas</span>
+                    </div>
+
+                    <div>
+                        <strong>24/7</strong>
+                        <span>Digital Access</span>
+                    </div>
+
+                    <div>
+                        <strong>₱</strong>
+                        <span>Secure Payments</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-visual">
+
+                <div class="orbit orbit-one"></div>
+                <div class="orbit orbit-two"></div>
+
+                <div class="planet">
+
+                    <div class="planet-ring"></div>
+
+                    <span>SCIENCE</span>
+
+                </div>
+
+                <div class="floating-card card-one">
+                    🔭 Astronomy
+                </div>
+
+                <div class="floating-card card-two">
+                    🌋 Seismology
+                </div>
+
+                <div class="floating-card card-three">
+                    🏺 Archaeology
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FEATURES -->
+
+    <section class="features-section">
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span class="eyebrow">
+                    WHY SCIENCEMARKET
+                </span>
+
+                <h2>
+                    Built for people who love learning.
+                </h2>
+
+                <p>
+                    A marketplace designed for students,
+                    teachers, researchers and science enthusiasts.
+                </p>
+
+            </div>
+
+
+            <div class="features-grid">
+
+                <article class="feature-card">
+
+                    <span class="feature-icon">🔭</span>
+
+                    <h3>Astronomy</h3>
+
+                    <p>
+                        Explore stars, galaxies, planets,
+                        cosmology and space science resources.
+                    </p>
+
+                </article>
+
+
+                <article class="feature-card">
+
+                    <span class="feature-icon">🌎</span>
+
+                    <h3>Seismology</h3>
+
+                    <p>
+                        Learn about earthquakes, seismic waves,
+                        faults and Earth structure.
+                    </p>
+
+                </article>
+
+
+                <article class="feature-card">
+
+                    <span class="feature-icon">🏺</span>
+
+                    <h3>Archaeology</h3>
+
+                    <p>
+                        Discover ancient civilizations,
+                        artifacts, excavation and human history.
+                    </p>
+
+                </article>
+
+
+                <article class="feature-card">
+
+                    <span class="feature-icon">🌋</span>
+
+                    <h3>Plate Tectonics</h3>
+
+                    <p>
+                        Understand Earth's moving plates,
+                        volcanoes, mountains and ocean trenches.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- STORE -->
+
+    <section
+        id="store"
+        class="store-section"
+    >
+
+        <div class="container">
+
+            <div class="section-heading store-heading">
+
+                <div>
+
+                    <span class="eyebrow">
+                        SCIENCE STORE
+                    </span>
+
+                    <h2>
+                        Featured resources
+                    </h2>
+
+                </div>
+
+                <div class="store-controls">
+
+                    <input
+                        id="searchProducts"
+                        type="search"
+                        placeholder="Search science resources..."
+                    >
+
+                    <select id="categoryFilter">
+
+                        <option value="">
+                            All Categories
+                        </option>
+
+                        <option value="astronomy">
+                            Astronomy
+                        </option>
+
+                        <option value="seismology">
+                            Seismology
+                        </option>
+
+                        <option value="archaeology">
+                            Archaeology
+                        </option>
+
+                        <option value="plate_tectonics">
+                            Plate Tectonics
+                        </option>
+
+                        <option value="general_science">
+                            General Science
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="productsGrid"
+                class="products-grid"
+            >
+
+                <div class="loading-card">
+                    Loading products...
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section
+        id="about"
+        class="about-section"
+    >
+
+        <div class="container about-grid">
+
+            <div>
+
+                <span class="eyebrow">
+                    ABOUT US
+                </span>
+
+                <h2>
+                    Science knowledge should be accessible.
+                </h2>
+
+            </div>
+
+            <div>
+
+                <p>
+                    ScienceMarket connects creators of educational
+                    materials with people looking for quality
+                    science resources.
+                </p>
+
+                <p>
+                    Sellers can publish educational products,
+                    receive payments and monitor sales.
+                    Buyers can purchase resources and maintain
+                    a history of their transactions.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- DASHBOARD -->
+
+    <section
+        id="dashboard"
+        class="dashboard-section hidden"
+    >
+
+        <div class="container">
+
+            <div class="section-heading">
+
+                <span class="eyebrow">
+                    ACCOUNT
+                </span>
+
+                <h2>
+                    Your Dashboard
+                </h2>
+
+            </div>
+
+
+            <div class="dashboard-grid">
+
+                <div class="dashboard-card">
+
+                    <span>Sales</span>
+
+                    <strong id="salesCount">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="dashboard-card">
+
+                    <span>Purchases</span>
+
+                    <strong id="purchaseCount">
+                        0
+                    </strong>
+
+                </div>
+
+
+                <div class="dashboard-card">
+
+                    <span>Revenue</span>
+
+                    <strong id="revenueAmount">
+                        ₱0.00
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-columns">
+
+                <div>
+
+                    <h3>
+                        Sales History
+                    </h3>
+
+                    <div id="salesHistory">
+                        No sales yet.
+                    </div>
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Purchase History
+                    </h3>
+
+                    <div id="purchaseHistory">
+                        No purchases yet.
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="seller-panel">
+
+                <h3>
+                    Publish a Product
+                </h3>
+
+                <form id="productForm">
+
+                    <input
+                        id="productTitle"
+                        type="text"
+                        placeholder="Product title"
+                        required
+                        maxlength="150"
+                    >
+
+                    <textarea
+                        id="productDescription"
+                        placeholder="Product description"
+                        required
+                        maxlength="5000"
+                    ></textarea>
+
+                    <select
+                        id="productCategory"
+                        required
+                    >
+
+                        <option value="">
+                            Select category
+                        </option>
+
+                        <option value="astronomy">
+                            Astronomy
+                        </option>
+
+                        <option value="seismology">
+                            Seismology
+                        </option>
+
+                        <option value="archaeology">
+                            Archaeology
+                        </option>
+
+                        <option value="plate_tectonics">
+                            Plate Tectonics
+                        </option>
+
+                        <option value="general_science">
+                            General Science
+                        </option>
+
+                    </select>
+
+                    <input
+                        id="productPrice"
+                        type="number"
+                        min="1"
+                        max="100000"
+                        step="0.01"
+                        placeholder="Price in PHP"
+                        required
+                    >
+
+                    <input
+                        id="productFileUrl"
+                        type="url"
+                        placeholder="Digital product URL"
+                        required
+                    >
+
+                    <button
+                        type="submit"
+                        class="primary-button"
+                    >
+                        Publish Product
+                    </button>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section
+        id="contact"
+        class="contact-section"
+    >
+
+        <div class="container contact-grid">
+
+            <div>
+
+                <span class="eyebrow">
+                    CONTACT
+                </span>
+
+                <h2>
+                    Have a science question?
+                </h2>
+
+                <p>
+                    Contact the ScienceMarket team for
+                    marketplace support.
+                </p>
+
+            </div>
+
+            <div class="contact-card">
+
+                <p>
+                    Email:
+                    support@sciencemarket.example
+                </p>
+
+                <p>
+                    Payment:
+                    PayMongo
+                </p>
+
+                <p>
+                    Database:
+                    Supabase
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer class="site-footer">
+
+    <div class="container footer-grid">
+
+        <div>
+
+            <a
+                href="#home"
+                class="footer-logo"
+            >
+                ScienceMarket
+            </a>
+
+            <p>
+                Explore. Learn. Sell.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                Sitemap
+            </h4>
+
+            <a href="#home">
+                Home
+            </a>
+
+            <a href="#about">
+                About Us
+            </a>
+
+            <a href="#store">
+                Store
+            </a>
+
+            <a href="#contact">
+                Contacts
+            </a>
+
+            <a href="#dashboard">
+                Dashboard
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                Science
+            </h4>
+
+            <a href="#store">
+                Astronomy
+            </a>
+
+            <a href="#store">
+                Seismology
+            </a>
+
+            <a href="#store">
+                Archaeology
+            </a>
+
+            <a href="#store">
+                Plate Tectonics
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                Marketplace
+            </h4>
+
+            <p>
+                Secure payments through PayMongo.
+            </p>
+
+            <p>
+                User accounts powered by Supabase.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <div class="container">
+
+            © 2026 ScienceMarket.
+            All rights reserved.
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<!-- AUTH MODAL -->
+
+<div
+    id="authModal"
+    class="modal hidden"
+>
+
+    <div class="modal-content">
+
+        <button
+            id="closeAuthModal"
+            class="modal-close"
+        >
+            ×
+        </button>
+
+        <div id="authForms">
+
+            <form id="loginForm">
+
+                <h2>
+                    Login
+                </h2>
+
+                <input
+                    id="loginEmail"
+                    type="email"
+                    placeholder="Email"
+                    required
+                >
+
+                <input
+                    id="loginPassword"
+                    type="password"
+                    placeholder="Password"
+                    required
+                >
+
+                <button
+                    type="submit"
+                    class="primary-button full-width"
+                >
+                    Login
+                </button>
+
+                <p>
+                    Don't have an account?
+                    <button
+                        type="button"
+                        id="showRegister"
+                        class="text-button"
+                    >
+                        Register
+                    </button>
+                </p>
+
+            </form>
+
+
+            <form
+                id="registerForm"
+                class="hidden"
+            >
+
+                <h2>
+                    Create Account
+                </h2>
+
+                <input
+                    id="registerName"
+                    type="text"
+                    placeholder="Full name"
+                    required
+                    maxlength="120"
+                >
+
+                <input
+                    id="registerEmail"
+                    type="email"
+                    placeholder="Email"
+                    required
+                >
+
+                <input
+                    id="registerPassword"
+                    type="password"
+                    placeholder="Password - minimum 8 characters"
+                    minlength="8"
+                    required
+                >
+
+                <input
+                    id="registerGcash"
+                    type="text"
+                    placeholder="GCash number"
+                    required
+                    pattern="^(09|\+639)[0-9]{9}$"
+                >
+
+                <label class="checkbox-label">
+
+                    <input
+                        id="registerSeller"
+                        type="checkbox"
+                    >
+
+                    I also want to sell science resources.
+
+                </label>
+
+                <button
+                    type="submit"
+                    class="primary-button full-width"
+                >
+                    Register
+                </button>
+
+                <p>
+                    Already have an account?
+                    <button
+                        type="button"
+                        id="showLogin"
+                        class="text-button"
+                    >
+                        Login
+                    </button>
+                </p>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- REVIEW MODAL -->
+
+<div
+    id="reviewModal"
+    class="modal hidden"
+>
+
+    <div class="modal-content">
+
+        <button
+            id="closeReviewModal"
+            class="modal-close"
+        >
+            ×
+        </button>
+
+        <h2>
+            Review Product
+        </h2>
+
+        <form id="reviewForm">
+
+            <input
+                id="reviewProductId"
+                type="hidden"
+            >
+
+            <div
+                id="starRating"
+                class="star-rating"
+            >
+
+                <button type="button" data-rating="1">
+                    ★
+                </button>
+
+                <button type="button" data-rating="2">
+                    ★
+                </button>
+
+                <button type="button" data-rating="3">
+                    ★
+                </button>
+
+                <button type="button" data-rating="4">
+                    ★
+                </button>
+
+                <button type="button" data-rating="5">
+                    ★
+                </button>
+
+            </div>
+
+            <textarea
+                id="reviewText"
+                placeholder="Write your review..."
+                maxlength="2000"
+                required
+            ></textarea>
+
+            <button
+                class="primary-button full-width"
+                type="submit"
+            >
+                Submit Review
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- AI CHATBOT -->
+
+<div
+    id="voiceflowWidget"
+    aria-label="Science AI Assistant"
+>
+</div>
+
+
+<div
+    id="toast"
+    class="toast"
+>
+</div>
+
+</body>
+</html>
